@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Search an Artist</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="/css/style.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+	<link href='http://fonts.googleapis.com/css?family=Arimo:400,700' rel='stylesheet' type='text/css'>
+
+</head>
+
+<body>
+	
+<!--	Entering Artist Name-->
+	<div class="wrapper all">
+		<div id="front">
+			<div id="lead">
+				<header><strong>Enter an Artist's Name</strong></header>
+
+				<div id="artist-form">
+					<form action="/" method="POST">
+						<input id="artist-input" type="text" name="artist">
+						<input id="submit-button" type="submit">
+					</form>
+				</div>
+			</div>
+	<!--/Entering artist name-->
+
+			<!--Result Nav-->
+			<% if params[:artist] %>
+			
+
+				<div id="results-lead">
+					<h3>We found <%= @artist.name%>!</h3>
+				</div>
+
+				<nav id="horz-nav">
+					<ul id='navigation-links'>
+						<li>
+							<a href="#general">General Information</a>
+						</li>
+<!--
+						<li>
+							<a href="#tracks">Albums</a>
+						</li>
+						<li>
+							<a href="#related-artists">Related Artists</a>
+						</li>
+-->
+					</ul>
+				</nav>
+					<!--/Result Nav-->
+		</div>
+		
+		<!--	Artist Info-->
+		<div id="results">
+			<div class="artist-info">
+				<div id="general">
+					<div id="general-col-1">
+						<h2 id="artist-name"><%= @artist.name %></h2>
+						<img id="artist-picture" src="<%= @artist.images.first['url'] %>" height="400" width="400" >
+					</div>
+					<div id="general-col-2">
+						<h2 id="genre">Main Genre: #<%= @artist.genres.first || "music" %></h2>
+						<h2 id="popularity">Popularity Score: <%= @artist.popularity %>%</h2>
+					</div>
+				</div>
+				
+				<div id="#tracks">
+					<% @artist.albums do |album| %>
+						<%= album.name %>
+					<% end %>
+				</div>
+				
+			</div>
+			<!--	/Artist Info-->
+		</div>
+		<% end %>
+	</div>
+		
+    <!-- jQuery -->
+    <script src="/js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="/js/bootstrap.min.js"></script>
+
+    <!-- Custom Theme JavaScript -->
+    <script>
+
+    $(function() {
+        $('a[href*=#]:not([href=#])').click(function() {
+            if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') || location.hostname == this.hostname) {
+                var target = $(this.hash);
+                target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+                if (target.length) {
+                    $('html,body').animate({
+                        scrollTop: target.offset().top
+                    }, 1000);
+                    return false;
+                }
+            }
+        });
+    });
+    </script>
+
+</body>
+
+</html>

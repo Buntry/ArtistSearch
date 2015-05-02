@@ -1,0 +1,91 @@
+body {
+	background-color: #5D2971;
+}
+
+.all {
+	font-family: 'Arimo', sans-serif;
+	color: white;
+}
+
+#lead {
+	margin-top: 17%;
+}
+
+#navigation-links li {
+	font-size: 36px;
+	display: inline;
+	list-style-type: none;
+	padding-right: 40px;
+}
+
+a:link { color: #ffffff; }
+a:visited { color: #ffffff; }
+a:hover, a:visisted, a:link, a:active { 
+	color: #ffffff;
+	text-decoration: none;
+}
+
+#lead header{
+	text-align: center;
+	font-size: 70px;
+	margin-bottom: 30px;
+}
+
+#artist-form {
+	text-align: center;
+	color: black;
+}
+
+input {
+	color: black;
+}
+
+#navigation-links {
+	color: white;
+}
+
+#horz-nav {
+	margin-top: 60px;
+	text-align: center;
+}
+
+#results-lead {
+	text-align: center;
+	font-size: 47px;
+}
+
+.artist-info {
+	
+}
+
+#front {
+	height: 100vh;
+}
+
+#general {
+	text-align: center;
+	padding-top: 70px;
+	background-color: #432F75;
+	height: 100vh;
+}
+
+#general div{
+	display: inline;
+	padding-right: 30px;
+}
+
+
+#images {
+	text-align: center;
+	padding-top: 70px;
+	background-color: #5D2971;
+	height: 100vh;
+}
+
+.artist-picture {
+	padding-left: 20px;
+}
+
+#tracks {
+	color: white;
+}
