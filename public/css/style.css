@@ -11,7 +11,7 @@ body {
 	margin-top: 17%;
 }
 
-#navigation-links li {
+.NL li {
 	font-size: 36px;
 	display: inline;
 	list-style-type: none;
@@ -40,11 +40,11 @@ input {
 	color: black;
 }
 
-#navigation-links {
+.NL {
 	color: white;
 }
 
-#horz-nav {
+.HZ {
 	margin-top: 60px;
 	text-align: center;
 }
